@@ -191,6 +191,7 @@ export const App = () => {
     if (!searchedImagesName) {
       return;
     }
+
     fetchByName();
   }, [searchedImagesName, page]);
 

@@ -11,7 +11,6 @@ import { Modal } from './Modal/Modal';
 export const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
   const [searchedImagesName, setSearchedImagesName] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState(null);

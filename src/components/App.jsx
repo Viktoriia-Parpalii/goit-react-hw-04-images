@@ -11,7 +11,7 @@ import { Modal } from './Modal/Modal';
 export const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [searchedImagesName, setSearchedImagesName] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState(null);
@@ -36,11 +36,11 @@ export const App = () => {
         const imagesByCategories = data.hits;
         if (data.hits.length === 0) {
           setIsLoading(true);
-          setError(
-            toast.warning(`Images weren't found! Please enter another name.`, {
-              theme: 'colored',
-            })
-          );
+
+          toast.warning(`Images weren't found! Please enter another name.`, {
+            theme: 'colored',
+          });
+
           return;
         }
 
@@ -48,10 +48,10 @@ export const App = () => {
         setLoadMore(page < Math.ceil(data.totalHits / 12));
 
         if (page === Math.ceil(data.totalHits / 12)) {
-          setError(toast.info('The images is finished'));
+          toast.info('The images is finished');
         }
       } catch (error) {
-        setError(toast.error(error.message, { theme: 'colored' }));
+        toast.error(error.message, { theme: 'colored' });
       } finally {
         setIsLoading(false);
       }
